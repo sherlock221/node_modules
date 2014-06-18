@@ -1,0 +1,20 @@
+{
+  "name": "socket.io-redis",
+  "version": "0.1.0",
+  "description": "## How to use",
+  "dependencies": {
+    "debug": "0.7.4",
+    "uid2": "0.0.3",
+    "redis": "0.10.1",
+    "msgpack-js": "0.3.0",
+    "socket.io-adapter": "0.1.0"
+  },
+  "readme": "\n# socket.io-redis\n\n## How to use\n\n```js\nvar io = require('socket.io')(3000);\nvar redis = require('socket.io-redis');\nio.adapter(redis({ host: 'localhost', port: 6379 ));\n```\n\nBy running socket.io with the `socket.io-redis` adapter you can run\nmultiple socket.io instances in different processes or servers that can\nall broadcast and emit events to and from each other.\n\nIf you need to emit events to socket.io instances from a non-socket.io\nprocess, you should use\n[socket.io-emit](http:///github.com/learnboost/socket.io-emit).\n\n## API\n\n### adapter(uri[, opts])\n\n`uri` is a string like `localhost:6379` where your redis server\nis located. For a list of options see below.\n\n### adapter(opts)\n\nThe following options are allowed:\n\n- `key`: the name of the key to pub/sub events on as prefix (`socket.io`)\n- `host`: host to connect to redis on (`localhost`)\n- `port`: port to connect to redis on (`6379`)\n- `pubClient`: optional, the redis client to publish events on\n- `subClient`: optional, the redis client to subscribe to events on\n\nIf you decide to supply `pubClient` and `subClient`, make sure you use\n[node_redis](https://github.com/mranney/node_redis) as a client or one\nwith an equivalent API.\n\nIf you supply clients, make sure you initialized them with \nthe `return_buffers` option set to `true`.\n\n## License\n\nMIT\n",
+  "readmeFilename": "README.md",
+  "_id": "socket.io-redis@0.1.0",
+  "dist": {
+    "shasum": "d42d43a316f6fca6db03c00cd3a5775e76681d95"
+  },
+  "_from": "socket.io-redis@0.1.0",
+  "_resolved": "https://registry.npmjs.org/socket.io-redis/-/socket.io-redis-0.1.0.tgz"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "gameboy",
+  "version": "0.1.0",
+  "description": "gameboy emulator by grantgalitz",
+  "dependencies": {
+    "emitter": "http://github.com/component/emitter/archive/1.0.1.tar.gz",
+    "debug": "0.7.4",
+    "canvas": "1.1.3"
+  },
+  "readme": "\n# gameboy\n\nNPM module that exports the `GameBoyCore.js` file from\n[grantgalitz/GameBoy-Online](https://github.com/grantgalitz/GameBoy-Online)\n\nChanges:\n- Converted into module.\n- Avoids using globals.\n- Cleaner interface for options tuning.\n- Compatible with browsers and node.js.\n- Removed js-based resizing in favor of browser's.\n- Allow for ROM input as `Buffer` or `ArrayBuffer` instead of\n  deprecated binary strings\n- Linting.\n- Removed unneeded dependencies.\n- Main interface turned into an `Emitter`.\n- Incorporated [debug](https://github.com/visionmedia/debug).\n- Added server-side usage examples\n\n## How to use\n\n```js\nvar gb = require('gameboy');\ngb(canvasElement, romData, opts);\n```\n\n### Options\n\n- `bootRom` - boot with boot ROM first (`true`)\n- `gbBootRom` - use gameboy boot ROM instead of gameboy color (`false`)\n- `mbc1` - allow for MCB1 instead of ROM only (`false`)\n- `prioritizeGb` - give priority to gameboy mode (`false`)\n- `interval` - emulator loop interval (`6`)\n- `canvas` - custom canvas constructor (`null`)\n- `imageSmoothing` - smooth images when resizing (`true`)\n- `drawEvents` - emit `draw` (`false`)\n- `sound` - sound interface (`null`)\n- `volume` - volume level (`1`)\n- `audioBufferMin` - minimum span amount over x interpreter iterations (`10`)\n- `audioBufferMax` - maximum span amount over x interpreter iterations (`20`)\n- `colorizeGb` - colorize gameboy mode (`true`)\n- `overrideMbc` - override MBC RAM disabling and always allow reading and\nwriting to the banks (`false`)\n- `typedArrays` - use typed arrays (`true`)\n- `channels` - user controlled channel enables (`[true,true,true,true]`)\n\n### Events\n\n- `draw` raised only if `drawEvents` is `true` whenever a draw to the\n  canvas occurs\n- `error` raised when emulation should be paused due to\n  unexpected behavior\n\n## License\n\nGPL2 - Copyright (C) 2010 - 2012 Grant Galitz\n",
+  "readmeFilename": "Readme.md",
+  "_id": "gameboy@0.1.0",
+  "dist": {
+    "shasum": "5ac3bcae688a646ba0b16c72b473741f87b8cde3"
+  },
+  "_from": "gameboy@0.1.0",
+  "_resolved": "https://registry.npmjs.org/gameboy/-/gameboy-0.1.0.tgz"
+}
